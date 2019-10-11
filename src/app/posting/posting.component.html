@@ -1,0 +1,56 @@
+<div class="container" style="padding-top: 20px;margin-top: 60px">
+  <div class="alert alert-success" *ngIf="isPostSuccess"> Posting Success</div>
+
+  <form class="navbar-form navbar-left" (ngSubmit)="PostingData()" #f="ngForm">
+
+            <label>jobName</label>
+            <div class="form-group">
+            <input type="text" name="jobName" ngModel class="form-control" required >
+            </div>
+
+            <label >require</label>
+            <div class="form-group">
+            <input type="text" name="require" ngModel class="form-control" required >
+            </div>
+
+            <label>number Of Emplyee</label>
+            <div class="form-group">
+            <input type="number" name="numberOfEmp" ngModel class="form-control" required >
+            </div>
+
+            <label >Which Field</label>
+            <select id="secret" class="form-control" ngModel name="field">
+                <option *ngFor="let c of interested"  [value]="c" >{{c}}</option>
+            </select>
+            <br>
+
+            <label >Experience Years</label>
+            <div class="form-group">
+              <input type="text" name="experienceYears" ngModel class="form-control" required >
+            </div>
+
+          <label >Level</label>
+          <div class="form-group">
+            <input type="text" name="level" ngModel class="form-control" required >
+          </div>
+
+          <label >Jop Type</label>
+          <div class="form-group">
+            <input type="text" name="jopType" ngModel class="form-control" required >
+          </div>
+
+          <label >Salary</label>
+          <div class="form-group">
+            <input type="number" name="salary" ngModel class="form-control" required >
+          </div>
+
+          <label >Language</label>
+          <div class="form-group">
+            <input type="text" name="language" ngModel class="form-control" required >
+          </div>
+
+
+          <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Post</button>
+
+         </form>
+    </div>

@@ -1,0 +1,22 @@
+<div class="container" style="margin-bottom: 40px; margin-top: 60px">
+
+      <form (ngSubmit)="getDataFromSearch()" #f="ngForm">
+        <label>Enter To Search</label>
+        <input type="text" class="form-control" name="search" ngModel>
+        <button type="submit" class="btn btn-outline-success" style="margin-top: 1%" > Search</button>
+      </form>
+
+</div>
+
+<div class=" container" *ngIf="userSearch.username !== null">
+    <div class="row">
+        <div class="col-md-5">
+          <a routerLink="/profile" [queryParams]="{username: userSearch.username}">
+          <li class="list-group-item-success" style="list-style-type:none; padding-left: 30px">{{userSearch.username}}</li>
+          </a>
+          <li class="list-group-item">{{userSearch.email}}  </li>
+        </div>
+
+
+    </div>
+</div>

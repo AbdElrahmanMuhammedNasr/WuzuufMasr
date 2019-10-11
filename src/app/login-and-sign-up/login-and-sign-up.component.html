@@ -1,0 +1,64 @@
+<div class="container" style="margin-top: 60px">
+    <form class="navbar-form navbar-left" (ngSubmit)="getSubmitedData()" #f="ngForm">
+
+
+          <label for="username">Username</label>
+          <div class="form-group">
+            <input type="text" name="username"  ngModel class="form-control">
+          </div>
+
+        <div *ngIf="!isLogin">
+          <label >email</label>
+          <div class="form-group">
+            <input type="email" name="email" ngModel class="form-control" required >
+          </div>
+
+            <label >Date Of Birth</label>
+            <div class="form-group">
+            <input type="date" name="dataOfBirth"  ngModel class="form-control">
+            </div>
+
+            <label >Phone Number</label>
+            <div class="form-group">
+             <input type="text" name="phone"  ngModel class="form-control" maxlength="11" minlength="11">
+            </div>
+
+            <label>City</label>
+            <div class="form-group">
+              <input type="text" name="city"  ngModel class="form-control" >
+            </div>
+
+
+            <hr>
+
+            <div class="radio">
+                <label *ngFor="let x of gender" style="display:block">
+                  <input type="radio" name="gender" [value]="x" checked ngModel  required> {{x}}
+                </label>
+            </div>
+
+            <hr>
+
+<!--            <div class="checkbox" >-->
+<!--                <div class="row">-->
+<!--                    <div class="col" *ngFor="let i of interested let n = index">-->
+<!--                        <a [class]="notChoose ? 'btn btn-outline-warning': 'btn btn-warning' " (click)="chooseInter(i)">{{i}}</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <hr>
+
+
+        </div>
+
+        <label for="password">password</label>
+        <div class="form-group">
+         <input type="password" name="password" ngModel class="form-control" required>
+        </div>
+
+         <button type="submit" class="btn btn-primary" [disabled]="!f.valid">{{isLogin ?"Login": "SignUp"}}</button>
+         <button type="button" class="btn btn-primary"  style="margin-left: 93%" (click)="SwitchSts()">{{ !isLogin ?"Login": "SignUp"}}</button>
+
+     </form>
+</div>

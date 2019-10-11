@@ -1,0 +1,46 @@
+<div class="container position-fixed" style=" padding-top: 10px;margin-top: 60px">
+            <div>
+            <img src="..." class="img-responsive" alt="Responsive image">
+            </div>
+
+            <div class="form-group">
+              <input type="text" name="email" class="form-control" disabled  value={{userData.myJob}}>
+            </div>
+
+            <div class="form-group">
+                 <input type="text" name="email" class="form-control" disabled  value={{userData.email}}>
+            </div>
+
+
+            <div class="form-group">
+                <input type="text" name="username" class="form-control"  disabled value={{userData.username}}>
+            </div>
+
+            <div class="form-group">
+                 <input type="text" name="DataOfBirth" class="form-control"  disabled value={{userData.dataOfBirth|date}}>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="phone" class="form-control"  disabled value={{userData.phone}}>
+            </div>
+
+            <div class="form-group">
+              <input type="text" name="phone" class="form-control"  disabled value={{userData.city}}>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="gender" class="form-control"  disabled value={{userData.gender}}>
+            </div>
+
+
+            <div class="form-group">
+              <textarea class="form-control" disabled value="{{userData.shortCut}}"></textarea>
+             </div>
+
+
+             <button  type="submit" class="btn btn-warning" (click)="updateuserInfo()" *ngIf=" username == owner">Change</button>
+             <button  type="button" class="btn btn-outline-primary" (click)="sendMessage( username )" *ngIf="username !== owner">Send Message</button> <br>
+<!--            <button  type="button" class="btn btn-outline-primary"  *ngIf="username !== owner && ">Add Friend</button>-->
+
+
+</div>

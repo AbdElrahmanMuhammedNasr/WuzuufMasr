@@ -1,0 +1,24 @@
+button{
+    margin-bottom:5px;
+    margin-left:5px;
+    width: 80px;
+    height: 35px;
+}
+.AddBtn{
+    width: 98%;
+}
+strong{
+    letter-spacing: 2px
+}
+.ConPass{
+  position: absolute;
+  margin-top: -60%;
+  height:93%;
+  width: 100.9%;
+}
+.ConPass h1{
+  opacity: 0.2;
+  font-size: 500px;
+  margin-left: 13%;
+  letter-spacing: 148px;
+}

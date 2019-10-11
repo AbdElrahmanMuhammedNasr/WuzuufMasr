@@ -1,0 +1,88 @@
+<div style=" margin-left: 20px; padding-top: 10px;" >
+
+   <div class="row "style="margin-top: 60px">
+        <div class="col-md-4">
+
+            <section  class="container ">
+                <p class="text-center"> <strong> Course </strong> </p>
+                <button type="button" class="btn btn-primary AddBtn" (click)="addData('learn')" *ngIf="username == owner" >Add</button>
+
+
+                <div class="row " *ngFor="let L of learTest">
+
+                    <div *ngIf=" username !== owner " style="width:100%;text-align: center">
+                      <p class="list-group-item-text"> {{L.courseName}} </p>
+                    </div>
+
+                    <div class="col-md-5" *ngIf=" username == owner ">
+                      <p class="list-group-item-text"> {{L.courseName}} </p>
+                    </div>
+                    <div class="col-md-7" *ngIf=" username == owner">
+                        <button type="button" class="btn btn-danger" (click)="deleteItem('course',L.id)">Delete</button>
+                        <button type="button" class="btn btn-warning" (click)="updateItem('learn',L.id)">Update</button>
+                    </div>
+                </div>
+
+
+
+            </section>
+
+        </div>
+<!-- ********************************************************************************* -->
+        <div class="col-md-4 ">
+            <section class="container">
+                <p class="text-center"> <strong> Projects </strong> </p>
+                <button type="button" class="btn btn-primary AddBtn" (click)="addData('project')" *ngIf=" username == owner ">Add</button>
+
+                <div class="row" *ngFor="let P of projectsTest">
+                        <div *ngIf=" username !== owner " style="width:100%;text-align: center">
+                          <p class="list-group-item-text"> <a routerLink="/operation/project" [queryParams]="{status:'view'}"  fragment={{P.projectName}}> {{P.projectName}} </a> </p>
+                        </div>
+
+                        <div class="col-md-5" *ngIf=" username == owner ">
+                          <p class="list-group-item-text"> <a routerLink="/operation/project" [queryParams]="{status:'view'}"  fragment={{P.projectName}}> {{P.projectName}} </a> </p>
+
+                        </div>
+                        <div class="col-md-7" *ngIf=" username == owner ">
+                            <button type="button" class="btn btn-danger" (click)="deleteItem('project', P.id)">Delete</button>
+                            <button type="button" class="btn btn-warning" (click)="updateItem('project', P.id)">Update</button>
+                        </div>
+                    </div>
+
+            </section>
+
+        </div>
+<!-- ************************************************************************************* -->
+        <div class="col-md-4 ">
+            <section class="container">
+                    <p class="text-center"> <strong> Experience </strong></p>
+                    <button type="button" class="btn btn-primary AddBtn"  (click)="addData('Experience')" *ngIf=" username == owner " >Add</button>
+
+
+                    <div class="row" *ngFor="let E of ExperiencrTest">
+
+                            <div *ngIf=" username !== owner " style="width:100%;text-align: center">
+                              <p class="list-group-item-text"> {{E.fields}} ( {{E.years}} ) years  <a href="#">{{E.companyName}}</a>   </p>
+                            </div>
+
+                            <div class="col-md-5" *ngIf=" username == owner "   >
+                              <p class="list-group-item-text"> {{E.fields}} ( {{E.years}} ) years  <a href="#">{{E.companyName}}</a>   </p>
+                            </div>
+                            <div class="col-md-7" *ngIf=" username == owner ">
+                                <button type="button" class="btn btn-danger" (click)="deleteItem('experience', E.id)">Delete</button>
+                                <button type="button" class="btn btn-warning" (click)="updateItem('Experience',  E.id)">Update</button>
+                            </div>
+                        </div>
+            </section>
+
+        </div>
+
+   </div>
+
+
+</div>
+
+<!--welcome message and infi-->
+<!--<div  class="ConPass">-->
+<!--   <h1>CV</h1>-->
+<!--</div>-->

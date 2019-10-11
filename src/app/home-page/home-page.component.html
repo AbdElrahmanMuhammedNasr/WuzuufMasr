@@ -1,0 +1,72 @@
+  <div style="width: 99%">
+    <div class="row">
+        <div class="position-fixed" style="height:740px;width: 15%;background-color: #eeeef3 ;margin-top: 60px">
+            <div class="container">
+
+              <section>
+                <img src="...">
+                <a routerLink="/profile"
+                   [queryParams]="{username: myProfile}"
+                   >{{myProfile}}
+                </a>
+              </section>
+
+                <hr>
+                <input class="form-control" type="text" placeholder="Search">
+                <hr>
+
+                <section *ngFor="let u of friendsName">
+                    <img src="...">
+                     <a routerLink="/profile"
+                      [queryParams]="{username: u.friends}"
+                      >{{u.friends}} </a>
+                </section>
+
+
+            </div>
+
+        </div>
+      <!--  end first part -->
+
+        <div class="col-md-10 " style=" height: 740px; margin-left: 15%; margin-top: 40px" >
+                <div *ngFor="let p of posts" class="Posts">
+                    <!-- photo and personal info -->
+                    <section>
+                        <img  src="..." alt="this is my company  photo">
+                        <a  routerLink="/profile" [queryParams]="{username: p.user.username}" >{{p.user.username}}</a>
+                        <button class="float-right btn btn-outline-danger" style="margin-left: 10px" *ngIf="myProfile == p.user.username" (click)="deletePost(p.id)">Delete</button>
+                        <button class="float-right btn btn-outline-info" *ngIf="myProfile == p.user.username">Update</button>
+
+                    </section>
+                    <!-- end photo and personal info -->
+                    <div class="container">
+                        <section>
+                            <p style="margin-top: 10px">{{p.postedIn|date}} </p>
+                            <ul class="list-group">
+                                <li class="list-group-item">{{ p.jobName}} - {{p.field}}</li>
+                            </ul>
+                            <button style="margin:10px" class="btn btn-primary" (click)= "countSender(p.id)" >Send CV</button>
+                            <a routerLink="/more" [queryParams]="{postId:p.id}">View More Detsils</a>
+                          <p>number of emp ({{p.numberOfEmp}})</p>
+                        </section>
+                    </div>
+
+                 </div>
+
+        </div>
+
+
+
+          <div *ngIf="showComfirmPass" class="ConPass position-fixed" style="margin-top: 55px">
+            <div class="container" style="margin-top: 10%;border: 1px solid white;width: 50%; padding: 50px;background-color: #eaeaea;">
+              <input class="form-control" style="text-align: center" type="password" placeholder="Confirm Your Password" [(ngModel)]="passInput" >
+              <div class="btn-group align-content-center" style="width: 100%">
+                <button type="button" class="btn btn-outline-primary" style="margin-top: 30px" (click)="confirmPass('Confirm')" >Confirm</button>
+                <button type="button" class="btn btn-outline-danger" style="margin-top: 30px" (click)="confirmPass('Cancel')">Cancel</button>
+              </div>
+            </div>
+
+          </div>
+      </div>
+  </div>
+
