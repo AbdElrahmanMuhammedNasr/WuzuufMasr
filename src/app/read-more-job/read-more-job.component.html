@@ -1,0 +1,49 @@
+<div class="container" style="margin-top: 60px">
+      <img  src="..." alt="this is photo">
+
+      <h3>{{post.jobName}}</h3>
+      <h5 style="color: #128ff2">{{post.user.username}}</h5>
+      <h5>{{post.user.city}} </h5>
+      <h5>Posted in {{post.postedIn|date}} </h5>
+    <hr>
+      <h5>  ({{post.cvSender}}) people send cv</h5>
+
+</div>
+
+<!--part 2-->
+<div class="container" >
+        <h3>Experience Needed</h3>
+        <h5> {{post.experienceYears}} years </h5>
+  <hr>
+        <h3> Career Level</h3>
+        <h5> {{post.level}}</h5>
+  <hr>
+        <h3> Job type</h3>
+        <h5 style="color: darkgoldenrod"> {{post.jopType}}</h5>
+  <hr>
+      <h3> Salary</h3>
+      <h5> {{post.salary}} $</h5>
+  <hr>
+      <h3> language</h3>
+      <h5> {{post.language}} </h5>
+
+</div>
+
+<!--part 3-->
+<div class="container">
+  <h3>Job Requirements</h3>
+      <ul *ngFor="let x of post.require">
+        <li>{{x}}</li>
+      </ul>
+    <h3>Qualification</h3>
+      <ul>
+        <li>degree in computer science</li>
+        <li>cetification</li>
+      </ul>
+</div>
+
+<!--part 4-->
+<div class="container">
+  <h2>About this company</h2>
+  <h5> {{post.user.shortCut}}</h5>
+</div>

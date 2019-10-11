@@ -1,0 +1,9 @@
+div{
+  margin-top: 10px;
+  background-color: #e4e4e49e;
+  padding: 50px;
+  width: 900px;
+}
+div:last-child{
+  margin-bottom: 50px;
+}
